@@ -1,0 +1,198 @@
+﻿:root {
+	--ButtonColor: black;
+	--ButtonBackgroundColor: white;
+	--ButtonBorderColor: gray;
+	--InputTextColor: black;
+	--InputBorderColor: gray;
+	--fontInput: 100 1.0em "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+
+html {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-size: 14px;
+	font: 100 0.82em "Open Sans", Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+@media only screen and (max-width:940px) {
+	body {
+		font: 100 0.9em "Open Sans", Arial, Helvetica, sans-serif;
+	}
+}
+
+
+	input[type="button"], input[type="submit"] {
+		color: var(--ButtonColor);
+		background-color: var(--ButtonBackgroundColor);
+		border: solid 1px var(--ButtonBorderColor);
+		line-height: 20px;
+		min-height: 20px;
+		padding: 4px 6px 4px 6px;
+		cursor: pointer;
+		outline: none;
+		-webkit-appearance: none;
+	}
+
+	select, input[type=text], input[type=password], input[type=email], input[type=number], input[type=date], textarea {
+		color: var(--InputTextColor);
+		border: solid 1px var(--InputBorderColor);
+		padding: 5px 5px 5px 5px;
+		border-radius: 2px;
+		/*border-color: #3c763d;*/
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+		-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		-moz-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		font: var(--fontInput);
+	}
+
+
+@media only screen and (max-width:940px) {
+	select, input[type=text], input[type=password], input[type=email], input[type=number], input[type=date], textarea {
+		font-size: 17px;
+		-webkit-appearance: none;
+	}
+}
+
+
+select#user > option[data-online='y'] {
+	color: blue;
+}
+
+div.content {
+	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+div.msgContent {
+	position: relative;
+	display: block;
+}
+
+
+#status {
+	padding: 5px;
+	background-color: black;
+	color: white;
+	line-height: 30px;
+}
+
+#LoginPanel {
+	display: none;
+	padding: 5px;
+	background-color: black;
+	color: white;
+	line-height: 30px;
+}
+
+#SendPanel {
+	display: none;
+	padding: 5px;
+	background-color: black;
+	color: white;
+	line-height: 30px;
+}
+
+#user {
+	width: 200px;
+}
+#debug {
+	padding-left: 3.0em;
+}
+
+#splitter {
+	display: flex;
+	justify-content: space-between;
+}
+
+#messageList {
+	scroll-behavior: smooth;
+	padding: 10px;
+	/*border: 1px solid lightgray;*/
+	max-height: 50vh;
+	overflow: auto;
+	display: none;
+	flex-basis: 80%;
+	flex-grow: 5;
+}
+
+#userState {
+	min-width: 100px;
+	max-width: 100px;
+	/*position: absolute;
+	right: 0;
+	top: 0;*/
+	/*border: 1px solid darkgray;*/
+	padding: 5px;
+	/*border-radius: 5px;*/
+	/*margin: 1em;*/
+	display: none;
+	color: black;
+	background-color: white;
+	flex-basis: 100px;
+	flex-grow: 1;
+}
+
+.userStateRow {
+	padding: 3px;
+	margin-bottom: 2px;
+	border-radius: 5px;
+	border: 1px solid transparent;
+	cursor: default;
+}
+
+	.userStateRow[data-online="y"]:hover {
+		border: 1px solid blue !important;
+	}
+
+.messageRow {
+	display: flex;
+}
+
+	.messageRow:focus {
+		outline: none;
+	}
+
+.messageBuble {
+	width: 80%;
+	padding: 5px;
+	margin: 6px;
+	box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.25);
+	border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.messageBubleLeft {
+	border-radius: 4px;
+	/*border: 1px solid blue;*/
+	background-color: lightblue;
+}
+
+.messageBubleRight {
+	border-radius: 4px;
+	/*border: 1px solid Green;*/
+	background-color: lightgreen;
+}
+
+.messageHeader {
+	border-radius: 4px;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0.2);
+	color: black;
+	font-size: xx-small;
+	margin-bottom: 5px
+}
+
+.messageText {
+	font-size: x-small;
+}
